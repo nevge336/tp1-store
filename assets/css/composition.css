@@ -1,0 +1,49 @@
+/*pile verticale de contenu avec rythme */
+body {
+	display: flex;
+	flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Lora', serif;*/
+}
+main {
+	padding: var(--espace-grand);
+}
+
+/* formulaire */
+form {
+	margin: var(--espace-petit);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--espace-tres-petit);
+	max-width: 20ch;
+}
+
+
+input {
+	padding: 5px;
+}
+
+input[type=submit]{
+	margin-top: var(--espace-moyen);
+	max-width: 100px;
+}
+
+label {
+	margin-top: var(--espace-petit);
+}
+
+/*tables*/
+
+table {
+	margin: var(--espace-grand) 0px;
+}
+
+td {
+	padding: 0px var(--espace-petit);
+}
+
+tbody {
+	font-family: 'Lora', serif;
+}
+

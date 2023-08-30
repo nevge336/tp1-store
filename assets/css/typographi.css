@@ -1,0 +1,12 @@
+h1 {
+    font-size: var(--police-tres-grand);
+}
+
+
+a {
+    font-size: var(--police-tres-petit);
+}
+
+h2 {
+    margin-bottom: var(--espace-grand);
+}

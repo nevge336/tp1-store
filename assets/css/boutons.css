@@ -1,0 +1,18 @@
+.bouton {
+    display: flex;
+    gap: var(--espace-moyen);
+    margin: var(--espace-petit);
+}
+
+
+.bouton a {
+    padding: var(--espace-moyen);
+
+    background-color: var(--gris-pale);
+    border-radius: var(--espace-petit);
+}
+
+
+.bouton a:hover {
+    background-color: antiquewhite;
+}

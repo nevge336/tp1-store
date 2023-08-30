@@ -1,0 +1,69 @@
+:root {
+
+
+	/* couleurs */
+    --gris-pale: rgb(240,240,240);
+	--gris-moyen: rgb(168, 167, 167);
+    --gris-fonce: rgb(65, 62, 62);
+	--gris-tres-fonce: rgb(100, 100, 100);
+	--gris-bleu: rgb(32, 32, 39);
+	--gris-transparent: rgba(79, 72, 72, 0.367);
+
+
+	
+	--blanc-fond: rgb(247, 245, 245);
+	--blanc: rgb(255, 255, 255);
+	--noir: rgb(0, 0, 0);
+
+    --brun: #141111;
+	--brun-pale: #403333;
+	--brun-tres-pale: #896f6f;
+
+	--gris-vert: #003333;
+	--vert: rgba(6, 35, 50, 0.5);
+	--sarcelle: #010e16;
+
+	/* palette graphique */
+	--arriere-plan: var(--blanc-fond);
+	--cercle: clamp(100px, 30vw, 450px);
+	--primaire: var(--gris-bleu);
+	--secondaire: var(--brun-pale);
+	--tertiaire: var(--brun-tres-pale);
+	--police-blanc: var(--gris-pale);
+
+	/* espaces */
+	--espace-tres-petit: clamp(5px, 0.5vw, 10px);
+	--espace-petit: clamp(10px, 1vw, 20px);
+	--espace-moyen: clamp(14px, 2vw, 40px);
+	--espace-grand: clamp(20px, 4vw, 80px);
+	--espace-tres-grand: clamp(25px, 7vw, 120px);
+	--espace-enorme: clamp(60px, 8vw, 140px);
+
+	--espace-250: clamp(100px, 11vw, 250px);
+	
+
+	
+	--gouttiere: var(--espace-petit);
+	--radius: 2px;
+
+	/* logo seulement */
+
+	--logo: clamp(130px, 20vw, 500px);
+	--logo-petit: clam(130px, 2vw, 350px);
+	--colonne: 30ch;
+
+	/* grandeurs de police */
+	--police-tres-petit: clamp(14px, 1.3vw, 18px); /*15px;*/
+	--police-petit: clamp(16px, 2vw, 20px); /* 18px; */
+	--police-moyen-petit: clamp(18px, 5vw, 24px); /*24px */
+	--police-moyen: clamp(18px, 3vw, 30px); /*30px*/
+	--police-moyen-grand: clamp(20px, 4vw, 35px); /*35px*/
+	--police-grand: clamp(25px, 4vw, 40px); /* 40px*/
+	--police-tres-grand: clamp(30px, 6vw, 70px); /* 70px*/
+	--police-enorme: clamp(30px, 9vw, 120px); /* 100px */
+
+
+
+
+
+}

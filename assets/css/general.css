@@ -1,0 +1,23 @@
+/* rétablir le rythme */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* hériter de la couleur principale (plutôt que le bleu « Google » */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* limiter les images à la largeur de leur parent */
+img {
+	max-width: 100%;
+}
+
+/* pour éviter l'espace sous l'image dans les flex*/
+header img {
+	display: block;
+	min-height: 100%;
+	object-fit: cover;
+}
