@@ -9,14 +9,12 @@ $select = $crud->select('mlab_client');
 
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php
+    require_once('class/Design.php');
+    $title = "Liste des clients";
+    echo Design::header($title);
+?>
+
     <table>
         <tr>
             <th>Nom</th>
@@ -27,14 +25,16 @@ $select = $crud->select('mlab_client');
         <?php
             foreach($select as $row){ ?>
                 <tr>
-                    <td><a href="client-show.php?id=<?= $row['id'] ?>"><?= $row['nom']; ?></a></td>
+                    <td><a href="client-show.php?id=<?= $row['id'] ?>"><?= $row['name']; ?></a></td>
                     <td><?= $row['address']; ?></td>
                     <td><?= $row['phone']; ?></td>
-                    <td><?= $row['courriel']; ?></td>
+                    <td><?= $row['email']; ?></td>
                 </tr>
             <?php 
             }
             ?>
     </table>
-</body>
-</html>
+
+<?php
+    echo Design::footer();
+?>

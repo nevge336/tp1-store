@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MVC PDO</title>
-    <style>
-        input{
-            display: block;
-            margin: 5px;
-        }
-    </style>
-</head>
-<body>
+<?php
+    require_once('class/Design.php');
+    $title = "Création d'une fiche client";
+    echo Design::header($title);
+?>
+
     <form action="client-store.php" method="post">
         <label>Nom
             <input type="text" name="name">
@@ -30,8 +23,9 @@
         <label>Date de naissance
             <input type="date" name="birthday">
         </label>
-        <input type="submit" value ="Save">
-
+        <input type="submit" value="Save">
     </form>
-</body>
-</html>
+
+<?php
+    echo Design::footer();
+?>

@@ -13,18 +13,21 @@ $selectId = $crud->selectId('mlab_client', $id);
 //évite de faire un foreach
 extract($selectId);
 
+
+
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
+<?php
+    require_once('class/Design.php');
+    $title = "Création d'une fiche client";
+    echo Design::header($title);
+?>
+
     <p><strong>Nom: </strong><?= $name;?></p>
     <p><strong>Adresse: </strong><?= $address;?></p>
     <p><strong>Courriel: </strong><?= $email;?></p>
     <p><strong>Téléphone: </strong><?= $phone;?></p>
     <a href="client-edit.php?id=<?= $id; ?>">Mise à jour</a>
-</body>
-</html>
+
+<?php
+    echo Design::footer();
+?>

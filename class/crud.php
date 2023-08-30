@@ -21,7 +21,7 @@ class Crud extends PDO{
     
     
     /**
-     * 
+     *  
      * fonction qui retourne les propriétés d'une ligne du tableau selon le "id"
      */
     public function selectId($table, $value, $field = 'id', $url='client-index'){
@@ -60,6 +60,52 @@ class Crud extends PDO{
         
         if($stmt->execute()){
             return $this->lastInsertId();
+        } else {
+            print_r($stmt->errorInfo());
+        }
+    }
+
+     //on peut ajouter l'url
+    /**
+     * 
+     */
+    public function delete($table, $value, $url, $field = 'id')
+    {
+        $sql = "DELETE FROM $table WHERE id = :$field";
+        $stmt = $this->prepare($sql);
+        $stmt->bindValue(":$field", $value);
+        $stmt->execute();
+
+        header("location:$url.php");
+    }
+
+
+
+    /**
+     * 
+     */
+    public function update($table, $data, $field = 'id')
+    {
+        $fieldName = null;
+        foreach ($_POST as $key => $value) {
+            $fieldName .= "$key = :$key, ";
+        }
+
+        $fieldName = rtrim($fieldName, ', ');
+
+        $sql = "UPDATE $table SET $fieldName WHERE $field = :$field";
+
+        //return $sql;
+
+        $stmt = $this->prepare($sql);
+
+        //doit boucler pour avoir accès à toutes les values 
+        foreach ($data as $key => $value) {
+            $stmt->bindValue(":$key", $value);
+        }
+
+        if ($stmt->execute()) {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         } else {
             print_r($stmt->errorInfo());
         }
