@@ -2,12 +2,22 @@
 body {
 	display: flex;
 	flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    /*font-family: 'Lora', serif;*/
+    font-family: 'Alegreya Sans', sans-serif;
 }
+
+header {
+	background-color: var(--noir);
+	min-height: var(--espace-enorme);
+	color: var(--blanc);
+	font-family: 'Exo 2', sans-serif;
+	padding: var(--espace-tres-grand);
+}
+
+
 main {
 	padding: var(--espace-grand);
 }
+
 
 /* formulaire */
 form {

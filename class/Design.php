@@ -13,7 +13,8 @@ class Design{
         </head>
         <body>
             <header>
-            <h1>MLAB YEAH!!!</h1>
+                <h1>Mlab</h1>
+                <h2>$title</h2>
             </header>
             <main>   
         ";
@@ -23,7 +24,7 @@ class Design{
     static public function footer(){
         return "
             </main>
-            <footer>
+            <footer class='footer'>
 
             </footer>
         </body>
