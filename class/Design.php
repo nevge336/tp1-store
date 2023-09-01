@@ -12,14 +12,32 @@ class Design{
             <link rel='stylesheet' href='./assets/css/main.css'>
         </head>
         <body>
+        <nav>
+        
+        <div class='menu'>
             <header>
-                <h1>Mlab</h1>
-                <h2>$title</h2>
+                <a href='index.php'>
+                    <img src='assets/img/logo_forum.svg' alt='logo'>
+                </a>
+                <p>Mlab</p>
             </header>
-            <main>   
+            <div>
+                <a href='index.php'>Accueil</a>
+                <a href='client-index.php'>Client</a>
+                <a href='product-create.php'>Ajouter un produit</a>
+            </div>
+        </div>
+    </nav>
+          
+            <main>  
+            <div class='sous-menu'>
+                <h3>$title</h3> 
         ";
     }
 
+
+
+ 
 
     static public function footer(){
         return "

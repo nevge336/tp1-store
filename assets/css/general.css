@@ -6,7 +6,7 @@
 
 /* hériter de la couleur principale (plutôt que le bleu « Google » */
 a {
-	text-decoration: none;
+	/*text-decoration: none;*/
 	color: inherit;
 }
 

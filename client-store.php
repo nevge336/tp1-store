@@ -20,10 +20,7 @@ echo $insert;
 
 header("location:client-show?id=$insert");
 
-//défi
-//créer la page client-edit
-// delete (utiliser le cours no8)
-// dans le crud créer la méthode delete
+
 
 
 ?>

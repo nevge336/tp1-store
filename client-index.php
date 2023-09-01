@@ -13,8 +13,10 @@ $select = $crud->select('mlab_client');
     require_once('class/Design.php');
     $title = "Liste des clients";
     echo Design::header($title);
-?>
 
+?>
+        <a href='client-create.php'>Nouveau client</a>
+    </div>
     <table>
         <tr>
             <th>Nom</th>

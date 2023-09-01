@@ -4,6 +4,7 @@
     echo Design::header($title);
 ?>
 
+</div>
     <form action="client-store.php" method="post">
         <label>Nom
             <input type="text" name="name">

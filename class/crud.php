@@ -84,7 +84,7 @@ class Crud extends PDO{
     /**
      * 
      */
-    public function update($table, $data, $field = 'id')
+    public function update($table, $data, $url, $field = 'id')
     {
         $fieldName = null;
         foreach ($_POST as $key => $value) {
@@ -105,10 +105,14 @@ class Crud extends PDO{
         }
 
         if ($stmt->execute()) {
-            header('Location: ' . $_SERVER['HTTP_REFERER']);
+            header("location:$url.php");
         } else {
             print_r($stmt->errorInfo());
         }
     }
 }
+
+/**
+ * header('Location: ' . $_SERVER['HTTP_REFERER']);
+ */
 ?>

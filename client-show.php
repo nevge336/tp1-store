@@ -18,15 +18,16 @@ extract($selectId);
 ?>
 <?php
     require_once('class/Design.php');
-    $title = "Création d'une fiche client";
+    $title = "Fiche client";
     echo Design::header($title);
 ?>
-
+        <a href="client-edit.php?id=<?= $id; ?>">Mise à jour</a>
+    </div>
     <p><strong>Nom: </strong><?= $name;?></p>
     <p><strong>Adresse: </strong><?= $address;?></p>
     <p><strong>Courriel: </strong><?= $email;?></p>
     <p><strong>Téléphone: </strong><?= $phone;?></p>
-    <a href="client-edit.php?id=<?= $id; ?>">Mise à jour</a>
+    
 
 <?php
     echo Design::footer();

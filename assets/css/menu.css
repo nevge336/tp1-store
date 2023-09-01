@@ -20,14 +20,16 @@
 } 
 
 .menu header{
-    margin: var(--espace-tres-petit) var(--espace-moyen);
     display: flex;
     flex-direction: row;
     gap: var(--espace-petit);
     align-items: center;
-    font-family: 'Lora', serif;
     font-weight: bold;
     font-size: var(--police-petit);
+    background-color: var(--noir);
+	min-height: var(--espace-enorme);
+	color: var(--blanc);
+	padding: var(--espace-grand);
 }
 
 .menu img {
