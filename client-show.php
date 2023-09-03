@@ -21,12 +21,47 @@ extract($selectId);
     $title = "Fiche client";
     echo Design::header($title);
 ?>
-        <a href="client-edit.php?id=<?= $id; ?>">Mise à jour</a>
+        <div>
+            <a href="client-edit.php?id=<?= $id; ?>">Modifier</a>
+            <a href="client-create.php?id=<?= $id; ?>">Nouveau client</a>
+            <a href="client-index.php">Liste clients</a>
+        </div>
+        
+
+        
     </div>
-    <p><strong>Nom: </strong><?= $name;?></p>
-    <p><strong>Adresse: </strong><?= $address;?></p>
-    <p><strong>Courriel: </strong><?= $email;?></p>
-    <p><strong>Téléphone: </strong><?= $phone;?></p>
+    <table>
+        <tr>
+            <th>Nom: </th>
+            <td><?= $name;?></td>
+        </tr>
+        <tr>
+            <th>Contact: </th>
+            <td><?= $contact;?></td>
+        </tr>
+        <tr>
+            <th>Adresse: </th>
+            <td><?= $address;?></td>
+        </tr>
+        <tr>
+            <th>Code Postal: </th>
+            <td><?= $postal_code;?></td>
+        </tr>
+        <tr>
+            <th>Courriel: </th>
+            <td><?= $email;?></td>
+        </tr>
+        <tr>
+            <th>Téléphone: </th>
+            <td><?= $phone;?></td>
+        </tr> 
+    </table>
+    <form action="client-delete.php" method="post">
+                <input type="hidden" name="id" value ="<?= $id; ?>">
+                <button>Effacer</button>
+            </form>
+        
+        
     
 
 <?php

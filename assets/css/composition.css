@@ -47,11 +47,17 @@ table {
 	margin: var(--espace-grand) 0px;
 }
 
-td {
-	padding: 0px var(--espace-petit);
+td, th {
+	padding: var(--espace-petit);
+	text-align: left;
+	max-width: var(--espace-250);
 }
-
+th {
+	top: 0;
+}
 tbody {
 	font-family: 'Alegreya Sans', serif;
 }
+
+
 

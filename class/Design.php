@@ -23,8 +23,8 @@ class Design{
             </header>
             <div>
                 <a href='index.php'>Accueil</a>
-                <a href='client-index.php'>Client</a>
-                <a href='product-create.php'>Ajouter un produit</a>
+                <a href='client-index.php'>Clients</a>
+                <a href='product-index.php'>Produits</a>
             </div>
         </div>
     </nav>

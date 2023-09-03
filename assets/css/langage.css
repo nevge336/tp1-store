@@ -6,7 +6,7 @@
 	--gris-moyen: rgb(168, 167, 167);
     --gris-fonce: rgb(65, 62, 62);
 	--gris-tres-fonce: rgb(100, 100, 100);
-	--gris-bleu: rgb(32, 32, 39);
+	--gris-bleu: #393944;
 	--gris-transparent: rgba(79, 72, 72, 0.367);
 
 
@@ -19,15 +19,17 @@
 	--brun-pale: #403333;
 	--brun-tres-pale: #896f6f;
 
+	--orange: #cd6905;
+
 	--gris-vert: #003333;
 	--vert: rgba(6, 35, 50, 0.5);
-	--sarcelle: #010e16;
+	--sarcelle: #0b3944;
 
 	/* palette graphique */
 	--arriere-plan: var(--blanc-fond);
 	--cercle: clamp(100px, 30vw, 450px);
 	--primaire: var(--gris-bleu);
-	--secondaire: var(--brun-pale);
+	--secondaire: var(--orange);
 	--tertiaire: var(--brun-tres-pale);
 	--police-blanc: var(--gris-pale);
 
@@ -39,7 +41,7 @@
 	--espace-tres-grand: clamp(25px, 7vw, 120px);
 	--espace-enorme: clamp(60px, 8vw, 140px);
 
-	--espace-250: clamp(100px, 11vw, 250px);
+	--espace-250: clamp(300px, 11vw, 450px);
 	
 
 	

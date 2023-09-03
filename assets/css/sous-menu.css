@@ -2,4 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+}
+
+.sous-menu div {
+    display: flex;
+    gap: var(--espace-moyen);
 }

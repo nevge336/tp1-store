@@ -15,8 +15,9 @@
 }
 
 .menu div a:hover {
-    background-color: var(--gris-fonce);
+    background-color: var(--secondaire);
     color: var(--blanc);
+    border-radius: var(--radius);
 } 
 
 .menu header{
@@ -26,7 +27,7 @@
     align-items: center;
     font-weight: bold;
     font-size: var(--police-petit);
-    background-color: var(--noir);
+    background-color: var(--primaire);
 	min-height: var(--espace-enorme);
 	color: var(--blanc);
 	padding: var(--espace-grand);

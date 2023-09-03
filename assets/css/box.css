@@ -1,33 +1,8 @@
 
 .box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--espace-moyen);
-}
-
-.box >div {
-    display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    border-radius: 5px;
-    flex-basis: 300px;
-    padding: var(--espace-moyen);
+    
+
 }
 
-.box p {
-    font-family: 'Lora', serif;
-    margin-top: var(--espace-tres-petit);
-}
-
-
-.box h3{
-    margin-top: var(--espace-tres-petit);
-}
-
-.box-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: var(--espace-petit);
-}

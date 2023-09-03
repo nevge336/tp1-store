@@ -16,15 +16,24 @@ extract($selectId);
 
 <?php
     require_once('class/Design.php');
-    $title = "Mise à jour du client";
+    $title = "Modifier client";
     echo Design::header($title);
 ?>
-
-
+        <div>
+            <a href='client-create.php'>Nouveau client</a>
+           
+        </div>
+        
+    </div>
+ 
     <form action="client-update.php" method="post">
+        
         <input type="hidden" name="id" value ="<?= $id; ?>">
         <label>Nom
             <input type="text" name="name" value="<?= $name; ?>">
+        </label>
+        <label>Contact
+            <input type="text" name="contact" value="<?= $contact; ?>">
         </label>
         <label>Adresse
             <input type="text" name="address" value="<?= $address; ?>">
@@ -38,15 +47,10 @@ extract($selectId);
         <label>Téléphone
             <input type="text" name="phone" value="<?= $phone; ?>">
         </label>
-        <label>Date de naissance
-            <input type="date" name="birthday" value="<?= $birthday; ?>">
-        </label>
-        <input type="submit" value ="Save">
+        <input type="submit" value ="Sauvegarder">
+        
     </form>
-    <form action="client-delete.php" method="post">
-        <input type="hidden" name="id" value ="<?= $id; ?>">
-        <button>Effacer</button>
-    </form>
+
 
 <?php
     echo Design::footer();
