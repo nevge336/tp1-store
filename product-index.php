@@ -3,7 +3,7 @@
 require_once ('class/Crud.php');
 
 $crud = new Crud;
-$select = $crud->select('mlab_product');
+$select = $crud->select('mlab_product', 'product_id');
 
 //var_dump($select);
 
@@ -26,9 +26,9 @@ $select = $crud->select('mlab_product');
         <?php
             foreach($select as $row){ ?>
                 <tr>
-                    <td><a href="product-show.php?id=<?= $row['id'] ?>"><?= $row['name']; ?></a></td>
-                    <td><?= $row['description']; ?></td>
-                    <td><?= $row['price']; ?></td>
+                    <td><a href="product-show.php?id=<?= $row['product_id'] ?>"><?= $row['product_name']; ?></a></td>
+                    <td><?= $row['product_description']; ?></td>
+                    <td><?= $row['product_price']; ?></td>
                 </tr>
             <?php 
             }

@@ -16,7 +16,7 @@ require_once('class/Crud.php');
 $crud = new Crud;
 $insert = $crud->insert('mlab_client', $_POST);
 
-echo $insert;
+//echo $insert;
 
 header("location:client-show?id=$insert");
 

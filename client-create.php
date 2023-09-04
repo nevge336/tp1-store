@@ -10,22 +10,22 @@
 </div>
     <form action="client-store.php" method="post">
         <label>Nom*
-            <input type="text" name="name">
+            <input type="text" name="client_name">
         </label>
         <label>Contact
-            <input type="text" name="contact">
+            <input type="text" name="client_contact">
         </label>
         <label>Adresse
-            <input type="text" name="address">
+            <input type="text" name="client_address">
         </label>
         <label>Code Postal
-            <input type="text" name="postal_code">
+            <input type="text" name="client_postal_code">
         </label>
         <label>Courriel*
-            <input type="email" name="email">
+            <input type="email" name="client_email">
         </label>
         <label>Téléphone
-            <input type="text" name="phone" placeholder="555 555-5555">
+            <input type="text" name="client_phone" placeholder="555 555-5555">
         </label>
 
         <input type="submit" value="Sauvegarder">

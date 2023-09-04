@@ -10,7 +10,7 @@ $id = $_GET['id'];
 require_once('class/Crud.php');
 
 $crud = new Crud;
-$selectId = $crud->selectId('mlab_product', $id);
+$selectId = $crud->selectId('mlab_product', $id, 'product_id');
 extract($selectId);
 ?>
 
@@ -27,18 +27,18 @@ extract($selectId);
     </div>
  
     <form action="product-update.php" method="post">
-    <input type="hidden" name="id" value ="<?= $id; ?>">
+    <input type="hidden" name="product_id" value ="<?= $product_id; ?>">
     <label>Nom produit
-            <input type="text" name="name" value="<?= $name; ?>">
+            <input type="text" name="product_name" value="<?= $product_name; ?>">
         </label>
         <label>Description
-            <textarea name="description" rows="5" cols="50" value="<?= $description; ?>" ></textarea>
+            <textarea name="product_description" rows="5" cols="50" value="<?= $product_description; ?>" ></textarea>
         </label>
         <label>Coût
-            <input type="text" name="cost" value="<?= $cost; ?>">
+            <input type="text" name="product_cost" value="<?= $product_cost; ?>">
         </label>
         <label>Prix de vente
-            <input type="text" name="price" value="<?= $price; ?>">
+            <input type="text" name="product_price" value="<?= $product_price; ?>">
         </label>    
         <input type="submit" value="Sauvegarder">
     </form>

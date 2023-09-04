@@ -5,10 +5,11 @@ if (!isset($_GET['id']) || $_GET['id']==null){
 }
 
 $id = $_GET['id'];
+
 require_once('class/Crud.php');
 $crud = new Crud;
 
-$selectId = $crud->selectId('mlab_client', $id);
+$selectId = $crud->selectId('mlab_client', $id, 'client_id');
 //var_dump($selectId);
 //évite de faire un foreach
 extract($selectId);
@@ -23,7 +24,7 @@ extract($selectId);
 ?>
         <div>
             <a href="client-edit.php?id=<?= $id; ?>">Modifier</a>
-            <a href="client-create.php?id=<?= $id; ?>">Nouveau client</a>
+            <a href="client-create.php">Nouveau client</a>
             <a href="client-index.php">Liste clients</a>
         </div>
         
@@ -33,31 +34,31 @@ extract($selectId);
     <table>
         <tr>
             <th>Nom: </th>
-            <td><?= $name;?></td>
+            <td><?= $client_name;?></td>
         </tr>
         <tr>
             <th>Contact: </th>
-            <td><?= $contact;?></td>
+            <td><?= $client_contact;?></td>
         </tr>
         <tr>
             <th>Adresse: </th>
-            <td><?= $address;?></td>
+            <td><?= $client_address;?></td>
         </tr>
         <tr>
             <th>Code Postal: </th>
-            <td><?= $postal_code;?></td>
+            <td><?= $client_postal_code;?></td>
         </tr>
         <tr>
             <th>Courriel: </th>
-            <td><?= $email;?></td>
+            <td><?= $client_email;?></td>
         </tr>
         <tr>
             <th>Téléphone: </th>
-            <td><?= $phone;?></td>
+            <td><?= $client_phone;?></td>
         </tr> 
     </table>
     <form action="client-delete.php" method="post">
-                <input type="hidden" name="id" value ="<?= $id; ?>">
+                <input type="hidden" name="client_id" value ="<?= $client_id; ?>">
                 <button>Effacer</button>
             </form>
         

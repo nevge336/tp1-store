@@ -1,6 +1,6 @@
 <?php
 
-$id = $_POST['id'];
+$id = $_POST['client_id'];
 
 require_once('class/Crud.php');
 

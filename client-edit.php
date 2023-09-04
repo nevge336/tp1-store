@@ -10,7 +10,7 @@ $id = $_GET['id'];
 require_once('class/Crud.php');
 
 $crud = new Crud;
-$selectId = $crud->selectId('mlab_client', $id);
+$selectId = $crud->selectId('mlab_client', $id, 'client_id');
 extract($selectId);
 ?>
 
@@ -21,31 +21,30 @@ extract($selectId);
 ?>
         <div>
             <a href='client-create.php'>Nouveau client</a>
-           
         </div>
         
     </div>
  
     <form action="client-update.php" method="post">
         
-        <input type="hidden" name="id" value ="<?= $id; ?>">
+        <input type="hidden" name="client_id" value ="<?= $client_id; ?>">
         <label>Nom
-            <input type="text" name="name" value="<?= $name; ?>">
+            <input type="text" name="client_name" value="<?= $client_name; ?>">
         </label>
         <label>Contact
-            <input type="text" name="contact" value="<?= $contact; ?>">
+            <input type="text" name="client_contact" value="<?= $client_contact; ?>">
         </label>
         <label>Adresse
-            <input type="text" name="address" value="<?= $address; ?>">
+            <input type="text" name="client_address" value="<?= $client_address; ?>">
         </label>
         <label>Code Postal
-            <input type="text" name="postal_code" value="<?= $postal_code; ?>">
+            <input type="text" name="client_postal_code" value="<?= $client_postal_code; ?>">
         </label>
         <label>Courriel
-            <input type="text" name="email" value="<?= $email; ?>">
+            <input type="text" name="client_email" value="<?= $client_email; ?>">
         </label>
         <label>Téléphone
-            <input type="text" name="phone" value="<?= $phone; ?>">
+            <input type="text" name="client_phone" value="<?= $client_phone; ?>">
         </label>
         <input type="submit" value ="Sauvegarder">
         

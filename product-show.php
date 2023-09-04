@@ -8,7 +8,7 @@ $id = $_GET['id'];
 require_once('class/Crud.php');
 $crud = new Crud;
 
-$selectId = $crud->selectId('mlab_product', $id);
+$selectId = $crud->selectId('mlab_product', $id, 'product_id');
 //var_dump($selectId);
 //évite de faire un foreach
 extract($selectId);
@@ -33,23 +33,23 @@ extract($selectId);
     <table>
         <tr>
             <th>Nom: </th>
-            <td><?= $name;?></td>
+            <td><?= $product_name;?></td>
         </tr>
         <tr>
             <th>Description: </th>
-            <td><?= $description;?></td>
+            <td><?= $product_description;?></td>
         </tr>
         <tr>
             <th>cost: </th>
-            <td><?= $cost;?> $</td>
+            <td><?= $product_cost;?> $</td>
         </tr>
         <tr>
             <th>price: </th>
-            <td><?= $price;?> $</td>
+            <td><?= $product_price;?> $</td>
         </tr>
     </table>
     <form action="product-delete.php" method="post">
-                <input type="hidden" name="id" value ="<?= $id; ?>">
+                <input type="hidden" name="product_id" value ="<?= $product_id; ?>">
                 <button>Effacer</button>
             </form>
         

@@ -3,13 +3,11 @@
 require_once ('class/Crud.php');
 
 $crud = new Crud;
-$select = $crud->select('mlab_client');
+$select = $crud->select('mlab_client', 'client_id' );
 
 //var_dump($select);
 
 
-?>
-<?php
     require_once('class/Design.php');
     $title = "Liste des clients";
     echo Design::header($title);
@@ -28,11 +26,11 @@ $select = $crud->select('mlab_client');
         <?php
             foreach($select as $row){ ?>
                 <tr>
-                    <td><a href="client-show.php?id=<?= $row['id'] ?>"><?= $row['name']; ?></a></td>
-                    <td><?= $row['contact']; ?></td>
-                    <td><?= $row['address']; ?></td>
-                    <td><?= $row['phone']; ?></td>
-                    <td><?= $row['email']; ?></td>
+                    <td><a href="client-show.php?id=<?= $row['client_id'] ?>"><?= $row['client_name']; ?></a></td>
+                    <td><?= $row['client_contact']; ?></td>
+                    <td><?= $row['client_address']; ?></td>
+                    <td><?= $row['client_phone']; ?></td>
+                    <td><?= $row['client_email']; ?></td>
                 </tr>
             <?php 
             }

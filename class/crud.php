@@ -110,7 +110,14 @@ class Crud extends PDO{
             print_r($stmt->errorInfo());
         }
     }
+
+
+    
+
+    
 }
+
+
 
 /**
  * header('Location: ' . $_SERVER['HTTP_REFERER']);

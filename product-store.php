@@ -16,7 +16,7 @@ require_once('class/Crud.php');
 $crud = new Crud;
 $insert = $crud->insert('mlab_product', $_POST);
 
-echo $insert;
+//echo $insert;
 
 header("location:product-show?id=$insert");
 
