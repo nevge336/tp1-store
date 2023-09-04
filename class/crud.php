@@ -38,6 +38,19 @@ class Crud extends PDO{
             exit;
         }
     }
+
+
+
+    public function selectProductSale($sale_id, $product_id) {
+        $sql = "SELECT * FROM mlab_product_sale WHERE ps_sale_id = :sale_id AND ps_product_id = :product_id";
+        $stmt = $this->prepare($sql);
+        $stmt->bindValue(':sale_id', $sale_id);
+        $stmt->bindValue(':product_id', $product_id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    
     
     
     /**
@@ -69,9 +82,9 @@ class Crud extends PDO{
     /**
      * 
      */
-    public function delete($table, $value, $url, $field = 'id')
+    public function delete($table, $value, $url, $field)
     {
-        $sql = "DELETE FROM $table WHERE id = :$field";
+        $sql = "DELETE FROM $table WHERE $field = :$field";
         $stmt = $this->prepare($sql);
         $stmt->bindValue(":$field", $value);
         $stmt->execute();

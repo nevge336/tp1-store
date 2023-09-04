@@ -11,7 +11,10 @@ $select_product = $crud->select('mlab_product', 'product_id');
     $title = "Vente";
     echo Design::header($title);
 ?>
-
+<div>
+<a href="client-create.php">Nouveau client</a>
+<a href='product-create.php'>Nouveau produit</a>
+</div>
 </div>
     <form action="sale-store.php" method="post">
         <label>Nom client

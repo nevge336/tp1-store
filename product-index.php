@@ -15,7 +15,10 @@ $select = $crud->select('mlab_product', 'product_id');
     echo Design::header($title);
 
 ?>
-        <a href='product-create.php'>Nouveau produit</a>
+<div>
+<a href='product-create.php'>Nouveau produit</a>
+</div>
+
     </div>
     <table>
         <tr>

@@ -22,7 +22,7 @@ class Design{
                 <p>Mlab</p>
             </header>
             <div>
-                <a href='sale-create.php'>Vente</a>
+                <a href='sale-index.php'>Vente</a>
                 <a href='client-index.php'>Clients</a>
                 <a href='product-index.php'>Produits</a>
                 

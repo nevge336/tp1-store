@@ -25,6 +25,7 @@ if ($insert_sale) {
        'ps_price' => $_POST['product_price']
     );
 $insert_ps = $crud->insert('mlab_product_sale', $dataToInsertPS);
+header("location:sale-show?id=$insert_sale");
 
 } else {
     // Gestion de l'erreur d'insertion

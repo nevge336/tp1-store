@@ -5,7 +5,9 @@
     $title = "Création produit";
     echo Design::header($title);
 ?>
-
+<div>
+<a href='product-index.php'>Liste produits</a>
+</div>
 </div>
     <form action="product-store.php" method="post">
         <label>Nom produit*

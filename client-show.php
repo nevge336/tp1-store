@@ -25,7 +25,7 @@ extract($selectId);
         <div>
             <a href="client-edit.php?id=<?= $id; ?>">Modifier</a>
             <a href="client-create.php">Nouveau client</a>
-            <a href="client-index.php">Liste clients</a>
+            <a href='sale-create.php'>Vente</a>
         </div>
         
 
