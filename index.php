@@ -3,7 +3,10 @@
     $title = "Tableau de bord";
     echo Design::header($title);
 ?>
-
+</div>
+<section>
+    <h5>[ Développement futur... à suivre!]</h5>
+</section>
 
 
 

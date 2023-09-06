@@ -18,7 +18,7 @@ $insert = $crud->insert('mlab_client', $_POST);
 
 //echo $insert;
 
-header("location:client-show?id=$insert");
+header("location:client-show.php?id=$insert");
 
 
 

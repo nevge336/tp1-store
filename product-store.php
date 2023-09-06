@@ -18,7 +18,7 @@ $insert = $crud->insert('mlab_product', $_POST);
 
 //echo $insert;
 
-header("location:product-show?id=$insert");
+header("location:product-show.php?id=$insert");
 
 
 

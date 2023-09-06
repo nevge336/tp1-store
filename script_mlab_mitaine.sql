@@ -1,5 +1,4 @@
-drop database mlab;
-drop table mlab_product;
+
 create database mlab;
 
 create table mlab_client (
@@ -42,13 +41,6 @@ constraint fk_ps_product_id foreign key (ps_product_id)
 references mlab_product (product_id)
 );	
 
-create table librairie.facture (
-factureId int auto_increment not null primary key,
-factureDate date not null,
-facturePaiementId int,
-factureLivraisonId int, 
-factureClientId int,
-constraint fk_facturePaiementId foreign key (facturePaiementId) references paiement (paiementId),
-constraint fk_factureLivraisonId foreign key (factureLivraisonId) references livraison (livraisonId),
-constraint fk_factureClientId foreign key (factureClientId) references client (clientId)
-);
+
+
+

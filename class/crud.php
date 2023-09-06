@@ -7,7 +7,8 @@ class Crud extends PDO{
         parent::__construct('mysql:host=localhost; dbname=mlab; port=3306; charset=utf8', 'root', '');
     }
     
-
+//
+//parent::__construct('mysql:host=localhost; dbname=e9040356; port=3306; charset=utf8', 'e9040356', 'ypsvFC6RQCCLVc6xvhmq');
     /**
      *  nom de tableau, id, type d'ordre
      * 
@@ -31,7 +32,7 @@ class Crud extends PDO{
      *  
      * fonction qui retourne les propriétés d'une ligne du tableau selon le "id"
      */
-    public function selectId($table, $value, $field = 'id', $url='client-index'){
+    public function selectId($table, $value, $field, $url='client-index'){
         $sql = "SELECT * FROM $table WHERE $field = :$field";
         $stmt = $this->prepare($sql);
         $stmt->bindValue(":$field", $value);
@@ -156,7 +157,7 @@ class Crud extends PDO{
     /**
      * Fonction pour modifier une entrée 
      */
-    public function update($table, $data, $url, $field)
+    public function update($table, $data, $url, $field = 'id')
     {
         $fieldName = null;
         foreach ($_POST as $key => $value) {

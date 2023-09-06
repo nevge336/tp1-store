@@ -23,7 +23,7 @@ extract($selectId);
     echo Design::header($title);
 ?>
         <div>
-            <a href="client-edit.php?id=<?= $id; ?>">Modifier</a>
+            <a href="client-edit.php?id=<?=$id; ?>">Modifier</a>
             <a href="client-create.php">Nouveau client</a>
             <a href='sale-create.php'>Vente</a>
         </div>
@@ -60,7 +60,7 @@ extract($selectId);
     <form action="client-delete.php" method="post">
                 <input type="hidden" name="client_id" value ="<?= $client_id; ?>">
                 <button>Effacer</button>
-            </form>
+    </form>
         
         
     
