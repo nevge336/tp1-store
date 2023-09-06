@@ -18,6 +18,13 @@ class Crud extends PDO{
         $stmt = $this->query($sql);
         return $stmt->fetchAll();
     }
+
+
+    public function selectSql($table, $field = 'id', $sqlInnerJoin, $order = 'ASC'){
+        $sql = "SELECT * FROM $table $sqlInnerJoin ORDER BY $field $order";
+        $stmt = $this->query($sql);
+        return $stmt->fetchAll();
+    }
     
     
     /**
@@ -40,16 +47,68 @@ class Crud extends PDO{
     }
 
 
-
-    public function selectProductSale($sale_id, $product_id) {
-        $sql = "SELECT * FROM mlab_product_sale WHERE ps_sale_id = :sale_id AND ps_product_id = :product_id";
+/**
+ * Fonction avec un clé primaire composée
+ *//*
+    public function selectComposedId($table, $product_id) {
+        $sql = "SELECT * FROM $table WHERE ps_sale_id = :sale_id AND ps_product_id = :product_id";
         $stmt = $this->prepare($sql);
         $stmt->bindValue(':sale_id', $sale_id);
         $stmt->bindValue(':product_id', $product_id);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
+    }*/
     
+
+    /**
+     * Fonction qui retourne une ligne  une requête sql et 2 inner join
+     */
+    public function selectIdSql($table, $value, $field = 'id', $url='client-index', $sqlInnerJoin){
+        try {
+            $sql = "SELECT * FROM $table $sqlInnerJoin WHERE $field = :$field";
+            $stmt = $this->prepare($sql);
+            $stmt->bindValue(":$field", $value);
+            $stmt->execute();
+            
+            $count = $stmt->rowCount();
+            
+            if($count == 1){
+                return $stmt->fetch();
+            } else {
+                // Gestion d'erreur ou message approprié ici
+                throw new Exception("Aucun résultat trouvé.");
+            }
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données ici
+            echo "Erreur de base de données : " . $e->getMessage();
+        }
+    }
+
+
+
+    /**
+     * Fonction qui retourne une ligne  une requête sql et 1 inner join
+     */
+    public function selectInnerJoinIdSimple($table, $value, $field = 'id', $url='client-index', $table2, $value2, $value1){
+        try {
+            $sql = "SELECT * FROM $table INNER JOIN $table2 ON $value2 = $value1 WHERE $field = :$field";
+            $stmt = $this->prepare($sql);
+            $stmt->bindValue(":$field", $value);
+            $stmt->execute();
+            
+            $count = $stmt->rowCount();
+            
+            if($count == 1){
+                return $stmt->fetch();
+            } else {
+                // Gestion d'erreur ou message approprié ici
+                throw new Exception("Aucun résultat trouvé.");
+            }
+        } catch (PDOException $e) {
+            // Gestion des erreurs de base de données ici
+            echo "Erreur de base de données : " . $e->getMessage();
+        }
+    }
     
     
     
@@ -80,7 +139,7 @@ class Crud extends PDO{
 
      //on peut ajouter l'url
     /**
-     * 
+     * Fonction pour effacer un item de la table
      */
     public function delete($table, $value, $url, $field)
     {
@@ -95,9 +154,9 @@ class Crud extends PDO{
 
 
     /**
-     * 
+     * Fonction pour modifier une entrée 
      */
-    public function update($table, $data, $url, $field = 'id')
+    public function update($table, $data, $url, $field)
     {
         $fieldName = null;
         foreach ($_POST as $key => $value) {
@@ -123,6 +182,44 @@ class Crud extends PDO{
             print_r($stmt->errorInfo());
         }
     }
+
+    
+    public function updateCPK($table, $data, $url, $field1, $field2)
+    {
+        try {
+            $fieldName = null;
+            foreach ($data as $key => $value) {
+                $fieldName .= "$key = :$key, ";
+            }
+    
+            $fieldName = rtrim($fieldName, ', ');
+    
+            $sql = "UPDATE $table SET $fieldName WHERE $field1 = :field1 AND $field2 = :field2";
+    
+            $stmt = $this->prepare($sql);
+    
+            // Assurer que $field1 et $field2 sont des variables sécurisées
+            $stmt->bindValue(":field1", $field1);
+            $stmt->bindValue(":field2", $field2);
+    
+            foreach ($data as $key => $value) {
+                $stmt->bindValue(":$key", $value);
+            }
+    
+            if ($stmt->execute()) {
+                header("location:$url.php");
+            } else {
+                throw new Exception("Erreur lors de la mise à jour.");
+            }
+        } catch (PDOException $e) {
+            // Gérer les erreurs de base de données ici
+            echo "Erreur de base de données : " . $e->getMessage();
+        } catch (Exception $e) {
+            // Gérer les autres erreurs ici, comme rediriger avec un message d'erreur
+            echo "Erreur : " . $e->getMessage();
+        }
+    }
+    
 
 
     

@@ -6,6 +6,7 @@ if (!isset($_GET['id']) || $_GET['id'] == null) {
 
 $id = $_GET['id'];
 
+
 require_once('class/Crud.php');
 $crud = new Crud;
 
@@ -17,18 +18,10 @@ $client_id = $select_sale_data['sale_client_id'];
 $client_data = $crud->selectId('mlab_client', $client_id, 'client_id', 'sale-index');
 extract($client_data);
 
-/*
-// Sélectionner la qte et le prix de la table mlab_product_sale
-$product_sale_data = $crud->selectProductSale($sale_id, $product_id);
-extract($product_sale_data);
-//$product_sale_data = $crud->selectId('mlab_product_sale', $sale_id, 'ps_sale_id', 'sale-index');
-//extract($product_sale_data);
+$product_data = $crud->selectIdSql('mlab_sale', $id, 'sale_id', 'sale-index', 'INNER JOIN mlab_product_sale ON ps_sale_id =sale_id INNER JOIN mlab_product ON product_id = ps_product_id');
+extract($product_data);
 
-// Sélectionner le nom du produit via la
-$product_id = $product_sale_data['ps_product_id'];
 
-$product_data = $crud->selectId('mlab_product', $product_id, 'product_id', 'sale-index');
-extract($product_data);*/
 ?>
 <?php
 require_once('class/Design.php');
@@ -37,7 +30,7 @@ echo Design::header($title);
 ?>
 
 <div>
-    <a href="sale-edit.php?id=<?= $id; ?>">Modifier</a>
+    
     <a href="sale-create.php?id=<?= $id; ?>">Nouvelle vente</a>
     <a href="sale-index.php">Liste facture</a>
 </div>
@@ -73,10 +66,11 @@ echo Design::header($title);
         <td><?= $product_price * $ps_quantity; ?> $</td>
     </tr>
 </table>
+<!--
 <form action="sale-delete.php" method="post">
     <input type="hidden" name="sale_id" value="<?= $select_sale_data['sale_id']; ?>">
     <button>Effacer</button>
-</form>
+</form> -->
 
 <?php
 echo Design::footer();

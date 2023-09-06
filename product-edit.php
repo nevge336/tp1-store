@@ -32,7 +32,7 @@ extract($selectId);
             <input type="text" name="product_name" value="<?= $product_name; ?>">
         </label>
         <label>Description
-            <textarea name="product_description" rows="5" cols="50" value="<?= $product_description; ?>" ></textarea>
+            <textarea name="product_description" rows="5" cols="50" ><?= $product_description; ?></textarea>
         </label>
         <label>Coût
             <input type="text" name="product_cost" value="<?= $product_cost; ?>">

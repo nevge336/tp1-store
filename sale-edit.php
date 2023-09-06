@@ -63,7 +63,7 @@ extract($selectId);
             </select>
         </label>
         
-        <label>Quantite
+        <label>Quantité
             <input type="number" name="ps_quantity" value="1">
         </label>
         <input type="hidden" name="product_price" id="product-price" value="<?= $select_product[0]['product_price']; ?>">
